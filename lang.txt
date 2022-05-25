@@ -1,0 +1,73 @@
+// ----------------------------------------------------------
+// ----- Rosewheels language standardised document v1.0 -----
+// ----------------------------------------------------------
+
+// ----------------------------------------------------------
+// ------------ Variable Types [As of May 2022] -------------
+// ----------------------------------------------------------
+
+
+Integer name = 1
+Float name = 1.0
+String name = "Hello World!"
+Char name = 'c'
+
+// ----------------------------------------------------------
+// ---------- Intended End Format [As of May 2022] ----------
+// ------ Here I will lay out a simple explanation and ------
+// ---- demonstration of how I want the language to work ---- 
+// ----------------------------------------------------------
+
+$import rsw.standard.cout.*
+
+class Classname {
+
+global Integer int1 = 1;
+
+global func name() {
+  cout.println("int1 : " + int1)
+}
+
+local Float float1 = 1.0
+
+local function local_name() {
+  cout.println("float1 : " + float1)
+}
+
+cout.println("Calling local_name() locally")
+local_name()
+
+}
+
+// ==========================================================
+// ===================== [SEPERATE FILE] ====================
+// ==========================================================
+
+$import org.myorg.Classname
+
+class Mainclass {
+
+global main(String[] args) {
+  Classname.name()
+  Classname.local_name()
+}
+
+}
+
+// =========================================================
+// =================== [CONSOLE OUTPUT] ====================
+// =========================================================
+
+[EXEC local_name() in class Classname]
+
+Calling local_name() locally
+
+float1 : 1.0
+
+[EXEC name() in class Mainclass]
+
+int1 : 1
+
+[EXEC local_name() in class Mainclass]
+
+ERROR : local_name() is defined as local, this can only be called from within the class it is defined in, within this context it is being called globally.
