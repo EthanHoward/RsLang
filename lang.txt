@@ -71,3 +71,39 @@ int1 : 1
 [EXEC local_name() in class Mainclass]
 
 ERROR : local_name() is defined as local, this can only be called from within the class it is defined in, within this context it is being called globally.
+
+// ----------------------------------------------------------
+// ------------ Enum-Defined types to be created ------------
+// ---------------------------------------------------------- 
+
+enum Tokens:
+  PLUS,
+  MINUS,
+  DIVIDE,
+  MULTIPLY,
+  IF,
+  ENDIF,
+  ELSE,
+  WHILE,
+  ENDWHILE,
+  PRINT,
+  READ,
+  ASSIGN,
+  SEMICOLON,
+  COMMA,
+  LPAREN,
+  RPAREN,
+  LBRACKET,
+  RBRACKET,
+  LBRACE,
+  RBRACE,
+  INTEGER,
+  FLOAT,
+  DOUBLE,
+  ID,
+  STRING,
+  COMMENT,
+  EOF,
+  ERROR,
+  SYNTAXERROR,
+  IMPORT;
